@@ -78,7 +78,7 @@ def VerifyAnswer(answer, ConjugatedForm):
 
 st.header("Czech Practice")
 
-Tense = st.selectbox("Selected Symbol:", ['present','past','future','mixed'], key='Tense')
+Tense = st.selectbox("Selected tense:", ['present','past','future','mixed'], key='Tense')
 if Tense == "mixed":
     Tense = random.choice(["present", "past", "future"])
 
