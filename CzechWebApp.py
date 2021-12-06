@@ -66,7 +66,7 @@ def ChooseEx(Tense):
     return ChosenVerb, ChosenPronoun, ConjugatedForm
     
 def VerifyAnswer(answer, ConjugatedForm):
-    if st.session_state.answer == st.session_state.ConjugatedForm:
+    if st.session_state.answer.lower().rstrip() == st.session_state.ConjugatedForm:
         result = '<p style="font-family:sans-serif; color:Green; font-size: 32px;">Correct</p>'
         st.markdown(result, unsafe_allow_html=True)
         #st.text("Correct")
@@ -78,7 +78,7 @@ def VerifyAnswer(answer, ConjugatedForm):
 
 st.header("Czech Practice")
 
-Tense = st.selectbox("Selected tense:", ['present','past','future','mixed'], key='Tense')
+Tense = st.selectbox("Select tense:", ['present','past','future','mixed'], key='Tense')
 if Tense == "mixed":
     Tense = random.choice(["present", "past", "future"])
 
